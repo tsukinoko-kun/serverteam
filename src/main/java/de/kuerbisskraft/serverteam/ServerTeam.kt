@@ -27,7 +27,7 @@ class ServerTeam : JavaPlugin(), Listener, CommandExecutor {
         event.joinMessage = null
         val name = event.player.name
         if (serverTeamManager.isMember(name)) {
-            serverTeamManager.broadcastMessage("${ChatColor.GREEN}${name}${ChatColor.RESET} ist dem Server beigetreten")
+            serverTeamManager.broadcastMessage("${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.GREEN}online")
         }
     }
 
@@ -36,7 +36,7 @@ class ServerTeam : JavaPlugin(), Listener, CommandExecutor {
         event.quitMessage = null
         val name = event.player.name
         if (serverTeamManager.isMember(name)) {
-            serverTeamManager.broadcastMessage("${ChatColor.GREEN}${name}${ChatColor.RESET} hat den Server verlassen")
+            serverTeamManager.broadcastMessage("${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.RED}offline")
         }
     }
 
