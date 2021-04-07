@@ -1,0 +1,34 @@
+name: Team
+version: ${project.version}
+main: de.kuerbisskraft.serverteam.ServerTeam
+api-version: 1.15
+prefix: team
+authors: [ FrankMayer ]
+description: Join und leave messages, für Mitglieder des Serverteams
+website: https://kuerbisskraft.de
+
+commands:
+  serverteam:
+    description: Serverteam Management
+
+permissions:
+  serverteam.*:
+    description: Volle Kontrolle des Serverteams
+    default: op
+    children:
+      serverteam.add: true
+      serverteam.delete: true
+      serverteam.list: true
+      serverteam.edit: true
+  serverteam.add:
+    description: Spieler zum Serverteam hinzufügen
+    default: op
+  serverteam.delete:
+    description: Spieler aus Serverteam entfernen
+    default: op
+  serverteam.list:
+    description: Spieler in Serverteam auflisten
+    default: true
+  serverteam.edit:
+    description: Serverteam infos bearbeiten
+    default: op
