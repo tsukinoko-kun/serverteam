@@ -66,9 +66,9 @@ class ServerTeamManager(scoreboard: Scoreboard, logger: Logger, teamName: String
 
         val list = list()
         if (list.isEmpty()) {
-            sender.sendMessage("Keine Spieler im Team")
+            sender.sendMessage("${ChatColor.GOLD}Keine Spieler im Team")
         } else {
-            sender.sendMessage("${list.size} Spieler im Team: \n" + list().joinToString("\n"))
+            sender.sendMessage("${ChatColor.GOLD}${list.size} Spieler im Team: \n${ChatColor.AQUA}" + list().joinToString("\n"))
         }
         return true
     }
