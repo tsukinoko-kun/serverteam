@@ -24,19 +24,21 @@ class ServerTeam : JavaPlugin(), Listener, CommandExecutor {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     fun onPlayerJoin(event: PlayerJoinEvent) {
-        event.joinMessage = null
         val name = event.player.name
-        if (serverTeamManager.isMember(name)) {
-            serverTeamManager.broadcastMessage("${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.GREEN}online")
+        event.joinMessage = if (serverTeamManager.isMember(name)) {
+            "${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.GREEN}online"
+        } else {
+            null
         }
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     fun onPlayerQuit(event: PlayerQuitEvent) {
-        event.quitMessage = null
         val name = event.player.name
-        if (serverTeamManager.isMember(name)) {
-            serverTeamManager.broadcastMessage("${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.RED}offline")
+        event.quitMessage = if (serverTeamManager.isMember(name)) {
+            "${ChatColor.YELLOW}Das Teammitglied ${ChatColor.GREEN}${name}${ChatColor.YELLOW} ist jetzt ${ChatColor.RED}offline"
+        } else {
+            null
         }
     }
 
