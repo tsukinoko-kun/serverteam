@@ -1,5 +1,8 @@
 # serverteam
 
+| :information_source: This is a commissioned work |
+|--------------------------------------------------|
+
 Join und quit messages werden nur von Mitgliedern des Serverteams angezeigt und sind nur für dessen Mitglieder sichtbar
 
 [Download](https://github.com/Frank-Mayer/serverteam/releases/latest)
